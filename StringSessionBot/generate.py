@@ -35,7 +35,7 @@ from telethon.errors import (
 ask_ques = "Please choose the python library you want to generate string session for"
 buttons_ques = [
     [
-        InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
+        InlineKeyboardButton("Pyrogram v2 [Old]", callback_data="pyrogram1"),
     ],
     [
         InlineKeyboardButton("Pyrogram v2 [New]", callback_data="pyrogram"),
