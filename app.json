@@ -1,7 +1,7 @@
 {
-  "name": "Pyrogram And Telethon String Session Generator",
-  "description": "Generate Pyrogram And Telethon String Session Easley",
-  "logo": "https://telegra.ph/file/27bfcfbb9d72fb3f3a1ca.jpg",
+  "name": "String-Session-Bot",
+  "description": "Telegram bot to generate pyrogram string session",
+  "logo": "https://telegra.ph/file/7e23ca7ad0d6acea43fe0.jpg",
   "keywords": [
     "telegram",
     "bot",
@@ -25,7 +25,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-  "repository": "https://github.com/jankarikiduniya/Session_Robot",
+  "repository": "https://github.com/Wahyu213/String-Session-Bot",
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",
@@ -49,8 +49,8 @@
     },
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
-      "required": false,
-      "value": "https://t.me/Alexa_Help"
+      "required": true,
+      "value": ""
     }
   }
 }

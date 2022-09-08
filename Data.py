@@ -2,81 +2,63 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = [
-        InlineKeyboardButton("🔥 sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ 🔥", callback_data="generate")
-    ]
-
-    home_buttons = [
-        generate_single_button,
-        [InlineKeyboardButton(text="🏠 ʀᴇᴛᴜʀɴ ʜᴏᴍᴇ 🏠", callback_data="home")],
-    ]
-
-    generate_button = [generate_single_button]
-
-    buttons = [
-        generate_single_button,
-        [
-            InlineKeyboardButton(
-                "✨ ᴏᴜʀ ᴏᴛʜᴇʀ ʙᴏᴛs ᴀɴᴅ sᴛᴀᴛᴜs ✨", url="https://t.me/AsadSupport/77"
-            )
-        ],
-        [
-            InlineKeyboardButton("🤔 ʜᴏᴡ ᴛᴏ ᴜsᴇ 🤔", callback_data="help"),
-            InlineKeyboardButton("🎪 ᴀʙᴏᴜᴛ 🎪", callback_data="about"),
-        ],
-        [InlineKeyboardButton("💌 ᴏᴛʜᴇʀ ʙᴏᴛs 💌", url="https://t.me/Alexa_Help")],
-    ]
-
+    # Start Message
     START = """
-ʜᴇʏ {}
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {}
-ɪꜰ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴛʀᴜsᴛ ᴛʜɪs ʙᴏᴛ, 
-1) sᴛᴏᴘ ʀᴇᴀᴅɪɴɢ ᴛʜɪs ᴍᴇssᴀɢᴇ
-2) ᴅᴇʟᴇᴛᴇ ᴛʜɪs ᴄʜᴀᴛ
-sᴛɪʟʟ ʀᴇᴀᴅɪɴɢ?
-ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴍᴇ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴛʀɪɴɢ sᴇssɪᴏɴ. ᴜsᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ !
-ʙʏ @Shayri_Music_Lovers ᴀɴᴅ @AsadSupport
+Hello {}
+
+If you don't trust this bot,
+1) don't read this message
+2) block bot or delete chat
+
+This Bot Works To Help You Get Session String Via Bot. Recommendations If You Want To Take String Use Another Account,
+Managed By @zenfrans
     """
 
-    HELP = """
-✨ **ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs** ✨
+    # Home Button
+    home_buttons = [
+        [InlineKeyboardButton("Start Generating Session", callback_data="generate")],
+        [InlineKeyboardButton(text="Home", callback_data="home")]
+    ]
 
-/about - ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ
-/help - ᴛʜɪs ᴍᴇssᴀɢᴇ
-/start - sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
-/repo - ɢᴇᴛ ʀᴇᴘᴏ
-/generate - sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴇssɪᴏɴ
-/cancel - ᴄᴀɴᴄᴇʟ ᴛʜᴇ ᴘʀᴏᴄᴇss
-/restart - ᴄᴀɴᴄᴇʟ ᴛʜᴇ ᴘʀᴏᴄᴇss
+    generate_button = [
+        [InlineKeyboardButton("Start Generating Session", callback_data="generate")]
+    ]
+
+    # Rest Buttons
+    buttons = [
+        [InlineKeyboardButton("Start Generating Session", callback_data="generate")],
+        [InlineKeyboardButton("Maintaned By", url="https://t.me/zenfrans")],
+        [
+            InlineKeyboardButton("How to use me", callback_data="help"),
+            InlineKeyboardButton("About", callback_data="about")
+      ],
+        [InlineKeyboardButton("Other bot info", url="https://t.me/nbzoning")],
+    ]
+
+
+    # Help Message
+    HELP = """
+✨ **Available Commands** ✨
+
+/about - About this bot
+/help - How to use this bot
+/start - Start Bot
+/generate - Start Generating Session
+/cancel - Cancel process
+/restart - Restart process
 """
 
     # About Message
     ABOUT = """
-**ᴀʙᴏᴜᴛ ᴛʜɪs ʙᴏᴛ** 
+**About This Bot** 
 
-ᴀ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ sᴛʀɪɴɢ sᴇssɪᴏɴ ʙʏ @AsadSupport
+A telegram bot to retrieve pyrograms and telethon string sessions by @nbzoning
 
-sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/jankarikiduniya/Session_Robot)
-ғʀᴀᴍᴇᴡᴏʀᴋ : [ᴘʏʀᴏɢʀᴀᴍ](docs.pyrogram.org)
-ʟᴀɴɢᴜᴀɢᴇ : [ᴘʏᴛʜᴏɴ](www.python.org)
-ᴏᴡɴᴇʀ : @Jankari_Ki_Duniya
+Group Support : [Gabung](https://t.me/OkaeriUserbot)
+
+Framework : [Pyrogram](docs.pyrogram.org)
+
+Language : [Python](www.python.org)
+
+Developer : @zenfrans
     """
-
-    # Repo Message
-    REPO = """
-━━━━━━━━━━━━━━━━━━━━━━━━
-💥 A ᴘᴏᴡᴇʀғᴜʟ ʙᴏᴛ
-ᴏғ ♻️ ᴅʀ ᴀsᴀᴅ ᴀʟɪ 🔥
-━━━━━━━━━━━━━━━━━
-ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ғᴏʀ ᴛɢ...
-┏━━━━━━━━━━━━━━━━━┓
-┣★ ᴄʀᴇᴀᴛᴇʀ [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)
-┣★ ʜᴇᴀʀᴛ ᴜs  [ʜᴇᴀʀᴛ ❤️](https://t.me/Give_Me_Heart)
-┣★ ʙᴏᴛ ᴜᴏᴅᴀᴛᴇs [ᴏᴜʀ ᴏᴛʜᴇʀ ʙᴏᴛs](https://t.me/AsadSupport)
-┣★ ᴀʟᴇxᴀ ғᴇᴅ [ғᴇᴅ ʟᴏɢs](https://t.me/AlexaFed_Logs)
-┣★ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/TheTeamAlexa/Session_Robot)
-┣★ ɴᴇᴛᴡᴏʀᴋ [ʀᴏᴄᴋs](https://t.me/Shayri_Music_Lovers)
-┗━━━━━━━━━━━━━━━━━┛
-💞 
-IF HAVE ANY QUESTION THEN CONTACT » TO » MY » [OWNER] @Jankari_Ki_Duniya
-   """

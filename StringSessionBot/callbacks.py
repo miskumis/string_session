@@ -1,9 +1,7 @@
-import traceback
-
 from Data import Data
 from pyrogram import Client
 from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton
-from GladesringSession.generate import generate_session
+from StringSessionBot.generate import generate_session, ERROR_MESSAGE
 
 
 # Callbacks
@@ -14,7 +12,7 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
     mention = user["mention"]
     query = callback_query.data.lower()
     if query.startswith("home"):
-        if query == "home":
+        if query == 'home':
             chat_id = callback_query.from_user.id
             message_id = callback_query.message.message_id
             await bot.edit_message_text(
@@ -39,21 +37,17 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
         await bot.edit_message_text(
             chat_id=chat_id,
             message_id=message_id,
-            text="**ʜᴇʀᴇ ɪs ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ**\n" + Data.HELP,
+            text="**Here's How to use me**\n" + Data.HELP,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(Data.home_buttons),
         )
     elif query == "generate":
         await callback_query.message.reply(
-            "ᴘʟᴇᴀsᴇ ᴄʜᴏᴏsᴇ ᴛʜᴇ ᴘʏᴛʜᴏɴ ʟɪʙʀᴀʀʏ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ sᴛʀɪɴɢ sᴇssɪᴏɴ ꜰᴏʀ",
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🧑‍💻 ᴘʏʀᴏɢʀᴀᴍ", callback_data="pyrogram"),
-                        InlineKeyboardButton("ᴛᴇʟᴇᴛʜᴏɴ 🧑‍💻", callback_data="telethon"),
-                    ]
-                ]
-            ),
+            "Please Choose Which String You Want To Take 🙂",
+            reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("Pyrogram", callback_data="pyrogram"),
+                InlineKeyboardButton("Telethon", callback_data="telethon")
+            ]])
         )
     elif query in ["pyrogram", "telethon"]:
         await callback_query.answer()
@@ -63,14 +57,4 @@ async def _callbacks(bot: Client, callback_query: CallbackQuery):
             else:
                 await generate_session(bot, callback_query.message, telethon=True)
         except Exception as e:
-            print(traceback.format_exc())
-            print(e)
             await callback_query.message.reply(ERROR_MESSAGE.format(str(e)))
-
-
-ERROR_MESSAGE = (
-    "ᴏᴏᴘs! ᴀɴ ᴇxᴄᴇᴘᴛɪᴏɴ ᴏᴄᴄᴜʀᴇᴅ! \n\n**ᴇʀʀᴏʀ** : {} "
-    "\n\nᴘʟᴇᴀsᴇ ᴠɪsɪᴛ @AsadSupport ɪꜰ ᴛʜɪs ᴍᴇssᴀɢᴇ ᴅᴏᴇsɴ'ᴛ ᴄᴏɴᴛᴀɪɴ ᴀɴʏ "
-    "sᴇɴsɪᴛɪᴠᴇ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ᴀɴᴅ ʏᴏᴜ ɪꜰ ᴡᴀɴᴛ ᴛᴏ ʀᴇᴘᴏʀᴛ ᴛʜɪs ᴀs "
-    "ᴛʜɪs ᴇʀʀᴏʀ ᴍᴇssᴀɢᴇ ɪs ɴᴏᴛ ʙᴇɪɴɢ ʟᴏɢɢᴇᴅ ʙʏ ᴜs!"
-)
