@@ -2,63 +2,61 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    # Start Message
+    generate_single_button = [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
+
+    home_buttons = [
+        generate_single_button,
+        [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
+    ]
+
+    generate_button = [generate_single_button]
+
+    buttons = [
+        generate_single_button,
+        [InlineKeyboardButton("✨ Bot Status and More Bots ✨", url="https://t.me/StarkBots/7")],
+        [
+            InlineKeyboardButton("How to Use ❔", callback_data="help"),
+            InlineKeyboardButton("🎪 About 🎪", callback_data="about")
+        ],
+        [InlineKeyboardButton("♥ More Amazing bots ♥", url="https://t.me/StarkBots")],
+    ]
+
     START = """
-Hello {}
+Hey {}
 
-If you don't trust this bot,
-1) don't read this message
-2) block bot or delete chat
+Welcome to {}
 
-This Bot Works To Help You Get Session String Via Bot. Recommendations If You Want To Take String Use Another Account,
-Managed By @zenfrans
+If you don't trust this bot, 
+1) stop reading this message
+2) delete this chat
+
+Still reading?
+You can use me to generate pyrogram (even version 2) and telethon string session. Use below buttons to learn more !
+
+By @StarkBots
     """
 
-    # Home Button
-    home_buttons = [
-        [InlineKeyboardButton("Start Generating Session", callback_data="generate")],
-        [InlineKeyboardButton(text="Home", callback_data="home")]
-    ]
-
-    generate_button = [
-        [InlineKeyboardButton("Start Generating Session", callback_data="generate")]
-    ]
-
-    # Rest Buttons
-    buttons = [
-        [InlineKeyboardButton("Start Generating Session", callback_data="generate")],
-        [InlineKeyboardButton("Maintaned By", url="https://t.me/zenfrans")],
-        [
-            InlineKeyboardButton("How to use me", callback_data="help"),
-            InlineKeyboardButton("About", callback_data="about")
-      ],
-        [InlineKeyboardButton("Other bot info", url="https://t.me/nbzoning")],
-    ]
-
-
-    # Help Message
     HELP = """
 ✨ **Available Commands** ✨
 
-/about - About this bot
-/help - How to use this bot
-/start - Start Bot
-/generate - Start Generating Session
-/cancel - Cancel process
-/restart - Restart process
+/about - About The Bot
+/help - This Message
+/start - Start the Bot
+/generate - Generate Session
+/cancel - Cancel the process
+/restart - Cancel the process
 """
 
-    # About Message
     ABOUT = """
 **About This Bot** 
 
-A telegram bot to retrieve pyrograms and telethon string sessions by @nbzoning
+Telegram Bot to generate Pyrogram and Telethon string session by @StarkBots
 
-Group Support : [Gabung](https://t.me/OkaeriUserbot)
+Source Code : [Click Here](https://github.com/StarkBotsIndustries/StringSessionBot)
 
-Framework : [Pyrogram](docs.pyrogram.org)
+Framework : [Pyrogram](https://docs.pyrogram.org)
 
-Language : [Python](www.python.org)
+Language : [Python](https://www.python.org)
 
-Developer : @zenfrans
+Developer : @StarkProgrammer
     """

@@ -1,7 +1,7 @@
 {
-  "name": "String-Session-Bot",
+  "name": "Pyrogram String Session Generator",
   "description": "Telegram bot to generate pyrogram string session",
-  "logo": "https://telegra.ph/file/7e23ca7ad0d6acea43fe0.jpg",
+  "logo": "https://telegra.ph/file/7ec22c82f580a334dd13e.jpg",
   "keywords": [
     "telegram",
     "bot",
@@ -25,7 +25,7 @@
          "plan": "heroku-postgresql"
       }
    ],
-  "repository": "https://github.com/Wahyu213/String-Session-Bot",
+  "repository": "https://github.com/StarkBotsIndustries/StringSessionBot",
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",
@@ -49,7 +49,7 @@
     },
     "MUST_JOIN": {
       "description": "Add username/id of a channel/group",
-      "required": true,
+      "required": false,
       "value": ""
     }
   }
