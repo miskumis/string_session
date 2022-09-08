@@ -36,14 +36,13 @@ ask_ques = "Please choose the python library you want to generate string session
 buttons_ques = [
     [
         InlineKeyboardButton("Pyrogram", callback_data="pyrogram1"),
-        InlineKeyboardButton("Telethon", callback_data="telethon"),
     ],
     [
         InlineKeyboardButton("Pyrogram v2 [New]", callback_data="pyrogram"),
     ],
     [
-        InlineKeyboardButton("Pyrogram Bot", callback_data="pyrogram_bot"),
-        InlineKeyboardButton("Telethon Bot", callback_data="telethon_bot"),
+        
+        InlineKeyboardButton("Telethon", callback_data="telethon"),
     ],
 ]
 
