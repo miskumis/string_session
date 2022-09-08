@@ -15,8 +15,9 @@ class Data:
         generate_single_button,
         [
             InlineKeyboardButton("perintah ", callback_data="help"),
+            InlineKeyboardButton("support", url="https://t.me/Gladesupportchannel"),
         ],
-        [InlineKeyboardButton("support", url="https://t.me/Gladesupportchannel")],
+
     ]
 
     START = """
